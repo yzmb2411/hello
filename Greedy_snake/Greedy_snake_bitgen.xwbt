@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\FPGA_test\ISE\Greedy_snake\Greedy_snake.ncd
+OUTFILE=E:\FPGA_test\ISE\Greedy_snake\Greedy_snake.bit
+FAMILY=Spartan6
+PART=xc6slx16-2csg324
+WORKINGDIR=E:\FPGA_test\ISE\Greedy_snake
+LICENSE=WebPack
+USER_INFO=_

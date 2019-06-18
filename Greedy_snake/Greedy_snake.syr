@@ -1,0 +1,1159 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: Greedy_snake.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Greedy_snake.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Greedy_snake"
+Output Format                      : NGC
+Target Device                      : xc6slx16-2-csg324
+
+---- Source Options
+Top Module Name                    : Greedy_snake
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\ipcore_dir\Snake_pll.v" into library work
+Parsing module <Snake_pll>.
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\ipcore_dir\start_rom.v" into library work
+Parsing module <start_rom>.
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\ipcore_dir\end_rom.v" into library work
+Parsing module <end_rom>.
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\vga_select.v" into library work
+Parsing module <vga_select_module>.
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\start_vga_char.v" into library work
+Parsing module <start_vga_char>.
+WARNING:HDLCompiler:751 - "E:\FPGA_test\ISE\Greedy_snake\start_vga_char.v" Line 39: Redeclaration of ansi port Clk_40mhz is not allowed
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\end_vga_char.v" into library work
+Parsing module <end_vga_char>.
+WARNING:HDLCompiler:751 - "E:\FPGA_test\ISE\Greedy_snake\end_vga_char.v" Line 39: Redeclaration of ansi port Clk_40mhz is not allowed
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\Vga_ctrl.v" into library work
+Parsing module <Vga_ctrl_module>.
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\start_and_end.v" into library work
+Parsing module <start_and_end>.
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" into library work
+Parsing module <Snake_ctrl_module>.
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\smg_display.v" into library work
+Parsing module <Smg_display_module>.
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\Key_check.v" into library work
+Parsing module <Key_check_module>.
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\Game_ctrl.v" into library work
+Parsing module <Game_ctrl_module>.
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\Apple_generate.v" into library work
+Parsing module <Apple_generate_module>.
+Analyzing Verilog file "E:\FPGA_test\ISE\Greedy_snake\Greedy_snake.v" into library work
+Parsing module <Greedy_snake>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <Greedy_snake>.
+
+Elaborating module <Snake_pll>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=5,CLKFX_MULTIPLY=4,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=20.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+WARNING:HDLCompiler:1127 - "E:\FPGA_test\ISE\Greedy_snake\ipcore_dir\Snake_pll.v" Line 135: Assignment to status_int ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+
+Elaborating module <Game_ctrl_module>.
+
+Elaborating module <Apple_generate_module>.
+
+Elaborating module <Snake_ctrl_module>.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 416: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 418: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 419: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 420: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 421: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 422: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 423: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 424: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 425: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 426: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 427: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 428: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 429: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 430: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 431: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v" Line 432: Signal <Body_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+
+Elaborating module <Vga_ctrl_module>.
+
+Elaborating module <Key_check_module>.
+WARNING:HDLCompiler:1016 - "E:\FPGA_test\ISE\Greedy_snake\start_and_end.v" Line 58: Port Flash_over_sig is not connected to this instance
+
+Elaborating module <start_and_end>.
+
+Elaborating module <start_vga_char>.
+WARNING:HDLCompiler:413 - "E:\FPGA_test\ISE\Greedy_snake\start_vga_char.v" Line 50: Result of 12-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "E:\FPGA_test\ISE\Greedy_snake\start_vga_char.v" Line 71: Result of 11-bit expression is truncated to fit in 10-bit target.
+
+Elaborating module <start_rom>.
+WARNING:HDLCompiler:1499 - "E:\FPGA_test\ISE\Greedy_snake\ipcore_dir\start_rom.v" Line 39: Empty module <start_rom> remains a black box.
+WARNING:HDLCompiler:189 - "E:\FPGA_test\ISE\Greedy_snake\start_and_end.v" Line 38: Size mismatch in connection of port <start_Vga_green>. Formal port size is 6-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "E:\FPGA_test\ISE\Greedy_snake\start_and_end.v" Line 39: Size mismatch in connection of port <start_Vga_blue>. Formal port size is 5-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "E:\FPGA_test\ISE\Greedy_snake\start_and_end.v" Line 40: Size mismatch in connection of port <start_Vga_red>. Formal port size is 5-bit while actual signal size is 1-bit.
+
+Elaborating module <end_vga_char>.
+WARNING:HDLCompiler:413 - "E:\FPGA_test\ISE\Greedy_snake\end_vga_char.v" Line 50: Result of 12-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "E:\FPGA_test\ISE\Greedy_snake\end_vga_char.v" Line 71: Result of 11-bit expression is truncated to fit in 10-bit target.
+
+Elaborating module <end_rom>.
+WARNING:HDLCompiler:1499 - "E:\FPGA_test\ISE\Greedy_snake\ipcore_dir\end_rom.v" Line 39: Empty module <end_rom> remains a black box.
+WARNING:HDLCompiler:189 - "E:\FPGA_test\ISE\Greedy_snake\start_and_end.v" Line 49: Size mismatch in connection of port <end_Vga_green>. Formal port size is 6-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "E:\FPGA_test\ISE\Greedy_snake\start_and_end.v" Line 50: Size mismatch in connection of port <end_Vga_blue>. Formal port size is 5-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "E:\FPGA_test\ISE\Greedy_snake\start_and_end.v" Line 51: Size mismatch in connection of port <end_Vga_red>. Formal port size is 5-bit while actual signal size is 1-bit.
+
+Elaborating module <vga_select_module>.
+WARNING:HDLCompiler:552 - "E:\FPGA_test\ISE\Greedy_snake\start_and_end.v" Line 58: Input port Flash_over_sig is not connected on this instance
+
+Elaborating module <Smg_display_module>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Greedy_snake>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\Greedy_snake.v".
+INFO:Xst:3210 - "E:\FPGA_test\ISE\Greedy_snake\Greedy_snake.v" line 32: Output port <LOCKED> of the instance <U1> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <Greedy_snake> synthesized.
+
+Synthesizing Unit <Snake_pll>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\ipcore_dir\Snake_pll.v".
+    Summary:
+	no macro.
+Unit <Snake_pll> synthesized.
+
+Synthesizing Unit <Game_ctrl_module>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\Game_ctrl.v".
+        START = 3'b001
+        PLAY = 3'b010
+        END = 3'b100
+    Found 3-bit register for signal <Game_status>.
+    Found finite state machine <FSM_0> for signal <Game_status>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 6                                              |
+    | Clock              | Clk_50mhz (rising_edge)                        |
+    | Reset              | Rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 001                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <Game_ctrl_module> synthesized.
+
+Synthesizing Unit <Apple_generate_module>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\Apple_generate.v".
+    Found 1-bit register for signal <Body_add_sig>.
+    Found 32-bit register for signal <Count1>.
+    Found 5-bit register for signal <Apple_y>.
+    Found 6-bit register for signal <Apple_x>.
+    Found 11-bit register for signal <Random_num>.
+    Found 6-bit subtractor for signal <Random_num[10]_GND_8_o_sub_8_OUT> created at line 37.
+    Found 5-bit subtractor for signal <Random_num[4]_GND_8_o_sub_13_OUT> created at line 38.
+    Found 11-bit adder for signal <Random_num[10]_GND_8_o_add_1_OUT> created at line 17.
+    Found 32-bit adder for signal <Count1[31]_GND_8_o_add_18_OUT> created at line 44.
+    Found 6-bit comparator equal for signal <Apple_x[5]_Head_x[5]_equal_5_o> created at line 34
+    Found 6-bit comparator equal for signal <GND_8_o_Head_y[5]_equal_6_o> created at line 34
+    Found 6-bit comparator greater for signal <PWR_7_o_Random_num[10]_LessThan_7_o> created at line 37
+    Found 5-bit comparator greater for signal <PWR_7_o_Random_num[4]_LessThan_12_o> created at line 38
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  55 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred   5 Multiplexer(s).
+Unit <Apple_generate_module> synthesized.
+
+Synthesizing Unit <Snake_ctrl_module>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\Snake_ctrl.v".
+        END = 3'b100
+    Found 1-bit register for signal <Snake_light_sig<2>>.
+    Found 1-bit register for signal <Snake_light_sig<1>>.
+    Found 1-bit register for signal <Snake_light_sig<0>>.
+    Found 1-bit register for signal <Hit_wall_sig>.
+    Found 1-bit register for signal <Hit_body_sig>.
+    Found 1-bit register for signal <Snake_light_sig<15>>.
+    Found 1-bit register for signal <Snake_light_sig<14>>.
+    Found 1-bit register for signal <Snake_light_sig<13>>.
+    Found 1-bit register for signal <Snake_light_sig<12>>.
+    Found 1-bit register for signal <Snake_light_sig<11>>.
+    Found 1-bit register for signal <Snake_light_sig<10>>.
+    Found 1-bit register for signal <Snake_light_sig<9>>.
+    Found 1-bit register for signal <Snake_light_sig<8>>.
+    Found 1-bit register for signal <Snake_light_sig<7>>.
+    Found 1-bit register for signal <Snake_light_sig<6>>.
+    Found 1-bit register for signal <Snake_light_sig<5>>.
+    Found 1-bit register for signal <Snake_light_sig<4>>.
+    Found 1-bit register for signal <Snake_light_sig<3>>.
+    Found 1-bit register for signal <Eaten_sig>.
+    Found 2-bit register for signal <Direct_r>.
+    Found 32-bit register for signal <Count>.
+    Found 96-bit register for signal <n0400[95:0]>.
+    Found 96-bit register for signal <n0401[95:0]>.
+    Found 7-bit register for signal <Body_num>.
+    Found 1-bit register for signal <Direct_left>.
+    Found 1-bit register for signal <Direct_right>.
+    Found 1-bit register for signal <Direct_up>.
+    Found 1-bit register for signal <Direct_down>.
+    Found finite state machine <FSM_1> for signal <Direct_r>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 6                                              |
+    | Clock              | Clk_50mhz (rising_edge)                        |
+    | Reset              | Rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 11                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 6-bit subtractor for signal <Body_y[0][5]_GND_10_o_sub_61_OUT> created at line 266.
+    Found 6-bit subtractor for signal <Body_x[0][5]_GND_10_o_sub_65_OUT> created at line 281.
+    Found 6-bit adder for signal <Body_y[0][5]_GND_10_o_add_62_OUT> created at line 274.
+    Found 6-bit adder for signal <Body_x[0][5]_GND_10_o_add_66_OUT> created at line 289.
+    Found 32-bit adder for signal <Count[31]_GND_10_o_add_86_OUT> created at line 296.
+    Found 7-bit adder for signal <Body_num[6]_GND_10_o_add_108_OUT> created at line 387.
+    Found 1-bit 4-to-1 multiplexer for signal <Direct[1]_Hit_wall_sig_Mux_67_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_x[0][5]_Mux_68_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_x[0][5]_Mux_69_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_x[0][5]_Mux_70_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_x[0][5]_Mux_71_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_x[0][5]_Mux_72_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_x[0][5]_Mux_73_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_y[0][5]_Mux_74_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_y[0][4]_Mux_75_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_y[0][3]_Mux_76_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_y[0][2]_Mux_77_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_y[0][1]_Mux_78_o> created at line 260.
+    Found 1-bit 3-to-1 multiplexer for signal <Direct[1]_Body_y[0][0]_Mux_79_o> created at line 260.
+    Found 1-bit 16-to-1 multiplexer for signal <Body_num[3]_Snake_light_sig[15]_Mux_111_o> created at line 392.
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[1][5]_equal_15_o> created at line 196
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[1][5]_equal_16_o> created at line 196
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[2][5]_equal_18_o> created at line 197
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[2][5]_equal_19_o> created at line 197
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[3][5]_equal_21_o> created at line 198
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[3][5]_equal_22_o> created at line 198
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[4][5]_equal_24_o> created at line 199
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[4][5]_equal_25_o> created at line 199
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[5][5]_equal_27_o> created at line 200
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[5][5]_equal_28_o> created at line 200
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[6][5]_equal_30_o> created at line 201
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[6][5]_equal_31_o> created at line 201
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[7][5]_equal_33_o> created at line 202
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[7][5]_equal_34_o> created at line 202
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[8][5]_equal_36_o> created at line 203
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[8][5]_equal_37_o> created at line 203
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[9][5]_equal_39_o> created at line 204
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[9][5]_equal_40_o> created at line 204
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[10][5]_equal_42_o> created at line 205
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[10][5]_equal_43_o> created at line 205
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[11][5]_equal_45_o> created at line 206
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[11][5]_equal_46_o> created at line 206
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[12][5]_equal_48_o> created at line 207
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[12][5]_equal_49_o> created at line 207
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[13][5]_equal_51_o> created at line 208
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[13][5]_equal_52_o> created at line 208
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[14][5]_equal_54_o> created at line 209
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[14][5]_equal_55_o> created at line 209
+    Found 6-bit comparator equal for signal <Body_y[0][5]_Body_y[15][5]_equal_57_o> created at line 210
+    Found 6-bit comparator equal for signal <Body_x[0][5]_Body_x[15][5]_equal_58_o> created at line 210
+    Found 7-bit comparator lessequal for signal <n0215> created at line 392
+    Found 10-bit comparator greater for signal <Pixel_x[9]_PWR_10_o_LessThan_122_o> created at line 408
+    Found 10-bit comparator greater for signal <Pixel_y[9]_GND_10_o_LessThan_123_o> created at line 408
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[0][5]_equal_128_o> created at line 416
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[0][5]_equal_129_o> created at line 416
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[1][5]_equal_133_o> created at line 418
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[1][5]_equal_134_o> created at line 418
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[2][5]_equal_136_o> created at line 419
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[2][5]_equal_137_o> created at line 419
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[3][5]_equal_139_o> created at line 420
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[3][5]_equal_140_o> created at line 420
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[4][5]_equal_142_o> created at line 421
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[4][5]_equal_143_o> created at line 421
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[5][5]_equal_145_o> created at line 422
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[5][5]_equal_146_o> created at line 422
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[6][5]_equal_148_o> created at line 423
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[6][5]_equal_149_o> created at line 423
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[7][5]_equal_151_o> created at line 424
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[7][5]_equal_152_o> created at line 424
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[8][5]_equal_154_o> created at line 425
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[8][5]_equal_155_o> created at line 425
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[9][5]_equal_157_o> created at line 426
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[9][5]_equal_158_o> created at line 426
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[10][5]_equal_160_o> created at line 427
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[10][5]_equal_161_o> created at line 427
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[11][5]_equal_163_o> created at line 428
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[11][5]_equal_164_o> created at line 428
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[12][5]_equal_166_o> created at line 429
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[12][5]_equal_167_o> created at line 429
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[13][5]_equal_169_o> created at line 430
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[13][5]_equal_170_o> created at line 430
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[14][5]_equal_172_o> created at line 431
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[14][5]_equal_173_o> created at line 431
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Body_x[15][5]_equal_175_o> created at line 432
+    Found 6-bit comparator equal for signal <Pixel_y[9]_Body_y[15][5]_equal_176_o> created at line 432
+    Summary:
+	inferred   6 Adder/Subtractor(s).
+	inferred 254 D-type flip-flop(s).
+	inferred  65 Comparator(s).
+	inferred  70 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <Snake_ctrl_module> synthesized.
+
+Synthesizing Unit <Vga_ctrl_module>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\Vga_ctrl.v".
+    Found 1-bit register for signal <Vsync_sig>.
+    Found 1-bit register for signal <Hsync_sig>.
+    Found 10-bit register for signal <Column_count>.
+    Found 10-bit register for signal <Row_count>.
+    Found 10-bit register for signal <Pixel_x>.
+    Found 10-bit register for signal <Pixel_y>.
+    Found 3-bit register for signal <Vga_rgb>.
+    Found 10-bit subtractor for signal <Row_count[9]_GND_12_o_sub_1_OUT> created at line 50.
+    Found 10-bit subtractor for signal <Column_count[9]_GND_12_o_sub_2_OUT> created at line 51.
+    Found 10-bit adder for signal <Column_count[9]_GND_12_o_add_7_OUT> created at line 66.
+    Found 10-bit adder for signal <Row_count[9]_GND_12_o_add_8_OUT> created at line 69.
+    Found 4x1-bit Read Only RAM for signal <_n0158>
+    Found 10-bit comparator greater for signal <Pixel_x[9]_PWR_12_o_LessThan_22_o> created at line 85
+    Found 10-bit comparator greater for signal <Pixel_y[9]_GND_12_o_LessThan_23_o> created at line 85
+    Found 6-bit comparator equal for signal <Pixel_x[9]_Apple_x[5]_equal_24_o> created at line 90
+    Found 6-bit comparator equal for signal <Pixel_y[9]_GND_12_o_equal_25_o> created at line 90
+    Summary:
+	inferred   1 RAM(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred  45 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred   9 Multiplexer(s).
+Unit <Vga_ctrl_module> synthesized.
+
+Synthesizing Unit <Key_check_module>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\Key_check.v".
+    Found 1-bit register for signal <Key_left>.
+    Found 1-bit register for signal <Key_right>.
+    Found 1-bit register for signal <Key_up>.
+    Found 1-bit register for signal <Key_down>.
+    Found 1-bit register for signal <Key_left2>.
+    Found 1-bit register for signal <Key_right2>.
+    Found 1-bit register for signal <Key_up2>.
+    Found 1-bit register for signal <Key_down2>.
+    Found 32-bit register for signal <Count1>.
+    Found 32-bit adder for signal <Count1[31]_GND_14_o_add_9_OUT> created at line 61.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Key_check_module> synthesized.
+
+Synthesizing Unit <start_and_end>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\start_and_end.v".
+WARNING:Xst:2898 - Port 'Flash_over_sig', unconnected in block instance 'vga_select_module', is tied to GND.
+    Summary:
+	no macro.
+Unit <start_and_end> synthesized.
+
+Synthesizing Unit <start_vga_char>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\start_vga_char.v".
+        LinePeriod = 1056
+        H_SyncPulse = 128
+        H_BackPorch = 88
+        H_ActivePix = 800
+        H_FrontPorch = 40
+        Hde_start = 216
+        Hde_end = 1016
+        FramePeriod = 628
+        V_SyncPulse = 4
+        V_BackPorch = 23
+        V_ActivePix = 600
+        V_FrontPorch = 1
+        Vde_start = 27
+        Vde_end = 627
+    Found 1-bit register for signal <hsync_r>.
+    Found 1-bit register for signal <hsync_de>.
+    Found 10-bit register for signal <y_cnt>.
+    Found 1-bit register for signal <vsync_r>.
+    Found 1-bit register for signal <vsync_de>.
+    Found 5-bit register for signal <word1_is_8>.
+    Found 11-bit register for signal <word1_rom_addra>.
+    Found 5-bit register for signal <word2_is_8>.
+    Found 11-bit register for signal <word2_rom_addra>.
+    Found 3-bit register for signal <word1_num<2:0>>.
+    Found 3-bit register for signal <word2_num<2:0>>.
+    Found 11-bit register for signal <x_cnt>.
+    Found 5-bit subtractor for signal <word1_is_8[4]_GND_16_o_sub_35_OUT> created at line 112.
+    Found 5-bit subtractor for signal <word2_is_8[4]_GND_16_o_sub_56_OUT> created at line 149.
+    Found 11-bit adder for signal <x_cnt[10]_GND_16_o_add_2_OUT> created at line 50.
+    Found 10-bit adder for signal <y_cnt[9]_GND_16_o_add_14_OUT> created at line 71.
+    Found 11-bit adder for signal <word1_rom_addra[10]_GND_16_o_add_33_OUT> created at line 108.
+    Found 11-bit adder for signal <word2_rom_addra[10]_GND_16_o_add_54_OUT> created at line 145.
+    Found 1-bit 8-to-1 multiplexer for signal <vga_r_word1<4>> created at line 180.
+    Found 1-bit 8-to-1 multiplexer for signal <vga_r_word2<4>> created at line 181.
+    Found 11-bit comparator lessequal for signal <n0035> created at line 92
+    Found 11-bit comparator greater for signal <x_cnt[10]_GND_16_o_LessThan_26_o> created at line 92
+    Found 10-bit comparator lessequal for signal <n0039> created at line 93
+    Found 10-bit comparator greater for signal <y_cnt[9]_GND_16_o_LessThan_28_o> created at line 93
+    Found 11-bit comparator lessequal for signal <n0057> created at line 129
+    Found 11-bit comparator greater for signal <x_cnt[10]_GND_16_o_LessThan_47_o> created at line 129
+    Summary:
+	inferred   6 Adder/Subtractor(s).
+	inferred  63 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred  13 Multiplexer(s).
+Unit <start_vga_char> synthesized.
+
+Synthesizing Unit <end_vga_char>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\end_vga_char.v".
+        LinePeriod = 1056
+        H_SyncPulse = 128
+        H_BackPorch = 88
+        H_ActivePix = 800
+        H_FrontPorch = 40
+        Hde_start = 216
+        Hde_end = 1016
+        FramePeriod = 628
+        V_SyncPulse = 4
+        V_BackPorch = 23
+        V_ActivePix = 600
+        V_FrontPorch = 1
+        Vde_start = 27
+        Vde_end = 627
+    Found 1-bit register for signal <hsync_r>.
+    Found 1-bit register for signal <hsync_de>.
+    Found 10-bit register for signal <y_cnt>.
+    Found 1-bit register for signal <vsync_r>.
+    Found 1-bit register for signal <vsync_de>.
+    Found 5-bit register for signal <word1_is_8>.
+    Found 11-bit register for signal <word1_rom_addra>.
+    Found 5-bit register for signal <word2_is_8>.
+    Found 11-bit register for signal <word2_rom_addra>.
+    Found 3-bit register for signal <word1_num<2:0>>.
+    Found 3-bit register for signal <word2_num<2:0>>.
+    Found 11-bit register for signal <x_cnt>.
+    Found 5-bit subtractor for signal <word1_is_8[4]_GND_18_o_sub_35_OUT> created at line 112.
+    Found 5-bit subtractor for signal <word2_is_8[4]_GND_18_o_sub_56_OUT> created at line 149.
+    Found 11-bit adder for signal <x_cnt[10]_GND_18_o_add_2_OUT> created at line 50.
+    Found 10-bit adder for signal <y_cnt[9]_GND_18_o_add_14_OUT> created at line 71.
+    Found 11-bit adder for signal <word1_rom_addra[10]_GND_18_o_add_33_OUT> created at line 108.
+    Found 11-bit adder for signal <word2_rom_addra[10]_GND_18_o_add_54_OUT> created at line 145.
+    Found 1-bit 8-to-1 multiplexer for signal <vga_r_word1<4>> created at line 181.
+    Found 1-bit 8-to-1 multiplexer for signal <vga_r_word2<4>> created at line 182.
+    Found 11-bit comparator lessequal for signal <n0035> created at line 92
+    Found 11-bit comparator greater for signal <x_cnt[10]_GND_18_o_LessThan_26_o> created at line 92
+    Found 10-bit comparator lessequal for signal <n0039> created at line 93
+    Found 10-bit comparator greater for signal <y_cnt[9]_GND_18_o_LessThan_28_o> created at line 93
+    Found 11-bit comparator lessequal for signal <n0057> created at line 129
+    Found 11-bit comparator greater for signal <x_cnt[10]_GND_18_o_LessThan_47_o> created at line 129
+    Summary:
+	inferred   6 Adder/Subtractor(s).
+	inferred  63 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred  13 Multiplexer(s).
+Unit <end_vga_char> synthesized.
+
+Synthesizing Unit <vga_select_module>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\vga_select.v".
+WARNING:Xst:647 - Input <Flash_over_sig> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <vga_select_module> synthesized.
+
+Synthesizing Unit <Smg_display_module>.
+    Related source file is "E:\FPGA_test\ISE\Greedy_snake\smg_display.v".
+        END = 3'b100
+    Found 1-bit register for signal <Eaten_sig>.
+    Found 32-bit register for signal <Count1>.
+    Found 2-bit register for signal <Smg_we>.
+    Found 8-bit register for signal <Points>.
+    Found 8-bit register for signal <Smg_duan>.
+    Found 32-bit adder for signal <Count1[31]_GND_21_o_add_5_OUT> created at line 89.
+    Found 4-bit adder for signal <Points[3]_GND_21_o_add_17_OUT> created at line 113.
+    Found 4-bit adder for signal <Points[7]_GND_21_o_add_19_OUT> created at line 118.
+    Found 4-bit comparator greater for signal <Points[3]_PWR_21_o_LessThan_17_o> created at line 112
+    Found 4-bit comparator greater for signal <Points[7]_PWR_21_o_LessThan_19_o> created at line 117
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  51 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  14 Multiplexer(s).
+Unit <Smg_display_module> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x1-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 30
+ 10-bit adder                                          : 4
+ 10-bit subtractor                                     : 2
+ 11-bit adder                                          : 7
+ 32-bit adder                                          : 4
+ 4-bit adder                                           : 2
+ 5-bit subtractor                                      : 5
+ 6-bit adder                                           : 2
+ 6-bit subtractor                                      : 3
+ 7-bit adder                                           : 1
+# Registers                                            : 77
+ 1-bit register                                        : 43
+ 10-bit register                                       : 6
+ 11-bit register                                       : 7
+ 2-bit register                                        : 1
+ 3-bit register                                        : 5
+ 32-bit register                                       : 4
+ 5-bit register                                        : 5
+ 6-bit register                                        : 1
+ 7-bit register                                        : 1
+ 8-bit register                                        : 2
+ 96-bit register                                       : 2
+# Comparators                                          : 87
+ 10-bit comparator greater                             : 6
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator greater                             : 4
+ 11-bit comparator lessequal                           : 4
+ 4-bit comparator greater                              : 2
+ 5-bit comparator greater                              : 1
+ 6-bit comparator equal                                : 66
+ 6-bit comparator greater                              : 1
+ 7-bit comparator lessequal                            : 1
+# Multiplexers                                         : 125
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 49
+ 1-bit 3-to-1 multiplexer                              : 12
+ 1-bit 4-to-1 multiplexer                              : 1
+ 1-bit 8-to-1 multiplexer                              : 4
+ 10-bit 2-to-1 multiplexer                             : 8
+ 11-bit 2-to-1 multiplexer                             : 6
+ 2-bit 2-to-1 multiplexer                              : 4
+ 3-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 5
+ 5-bit 2-to-1 multiplexer                              : 16
+ 6-bit 2-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 12
+ 96-bit 2-to-1 multiplexer                             : 2
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/start_rom.ngc>.
+Reading core <ipcore_dir/end_rom.ngc>.
+Loading core <start_rom> for timing and area information for instance <U1>.
+Loading core <end_rom> for timing and area information for instance <U1>.
+
+Synthesizing (advanced) Unit <Apple_generate_module>.
+The following registers are absorbed into counter <Count1>: 1 register on signal <Count1>.
+The following registers are absorbed into accumulator <Random_num>: 1 register on signal <Random_num>.
+Unit <Apple_generate_module> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Key_check_module>.
+The following registers are absorbed into counter <Count1>: 1 register on signal <Count1>.
+Unit <Key_check_module> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Snake_ctrl_module>.
+The following registers are absorbed into counter <Count>: 1 register on signal <Count>.
+The following registers are absorbed into counter <Body_num>: 1 register on signal <Body_num>.
+Unit <Snake_ctrl_module> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Vga_ctrl_module>.
+INFO:Xst:3217 - HDL ADVISOR - Register <Vsync_sig> currently described with an asynchronous reset, could be combined with distributed RAM <Mram__n0158> for implementation on block RAM resources if you made this reset synchronous instead.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 1-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <Column_count<1:0>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <Vga_ctrl_module> synthesized (advanced).
+
+Synthesizing (advanced) Unit <end_vga_char>.
+The following registers are absorbed into counter <x_cnt>: 1 register on signal <x_cnt>.
+The following registers are absorbed into counter <y_cnt>: 1 register on signal <y_cnt>.
+The following registers are absorbed into counter <word2_rom_addra>: 1 register on signal <word2_rom_addra>.
+The following registers are absorbed into counter <word1_rom_addra>: 1 register on signal <word1_rom_addra>.
+Unit <end_vga_char> synthesized (advanced).
+
+Synthesizing (advanced) Unit <start_vga_char>.
+The following registers are absorbed into counter <x_cnt>: 1 register on signal <x_cnt>.
+The following registers are absorbed into counter <y_cnt>: 1 register on signal <y_cnt>.
+The following registers are absorbed into counter <word2_rom_addra>: 1 register on signal <word2_rom_addra>.
+The following registers are absorbed into counter <word1_rom_addra>: 1 register on signal <word1_rom_addra>.
+Unit <start_vga_char> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x1-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 17
+ 10-bit adder                                          : 2
+ 10-bit subtractor                                     : 2
+ 32-bit adder                                          : 1
+ 4-bit adder                                           : 2
+ 5-bit subtractor                                      : 5
+ 6-bit adder                                           : 2
+ 6-bit subtractor                                      : 3
+# Counters                                             : 12
+ 10-bit up counter                                     : 2
+ 11-bit up counter                                     : 6
+ 32-bit up counter                                     : 3
+ 7-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 11-bit up accumulator                                 : 1
+# Registers                                            : 371
+ Flip-Flops                                            : 371
+# Comparators                                          : 87
+ 10-bit comparator greater                             : 6
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator greater                             : 4
+ 11-bit comparator lessequal                           : 4
+ 4-bit comparator greater                              : 2
+ 5-bit comparator greater                              : 1
+ 6-bit comparator equal                                : 66
+ 6-bit comparator greater                              : 1
+ 7-bit comparator lessequal                            : 1
+# Multiplexers                                         : 116
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 51
+ 1-bit 3-to-1 multiplexer                              : 12
+ 1-bit 4-to-1 multiplexer                              : 1
+ 1-bit 8-to-1 multiplexer                              : 4
+ 10-bit 2-to-1 multiplexer                             : 6
+ 11-bit 2-to-1 multiplexer                             : 2
+ 2-bit 2-to-1 multiplexer                              : 4
+ 3-bit 2-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 2
+ 5-bit 2-to-1 multiplexer                              : 16
+ 6-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 12
+ 96-bit 2-to-1 multiplexer                             : 2
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <Game_status[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 001   | 00
+ 010   | 01
+ 100   | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <U4/FSM_1> on signal <Direct_r[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 11    | 11
+ 00    | 00
+ 10    | 10
+ 01    | 01
+-------------------
+
+Optimizing unit <Greedy_snake> ...
+WARNING:Xst:1710 - FF/Latch <U7/start_top/word1_is_8_4> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U7/end_top/word1_is_8_4> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U7/start_top/word1_is_8_3> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U7/end_top/word1_is_8_3> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U7/start_top/word2_is_8_4> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U7/start_top/word1_is_8_4> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U7/end_top/word2_is_8_4> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U7/end_top/word1_is_8_4> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U7/start_top/word2_is_8_3> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U7/start_top/word1_is_8_3> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U7/end_top/word2_is_8_3> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U7/end_top/word1_is_8_3> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Apple_generate_module> ...
+
+Optimizing unit <Snake_ctrl_module> ...
+
+Optimizing unit <Vga_ctrl_module> ...
+
+Optimizing unit <Key_check_module> ...
+
+Optimizing unit <Smg_display_module> ...
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_59> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_53> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_47> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_41> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_35> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_29> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_23> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_17> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_11> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_5> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Snake_light_sig_1> (without init value) has a constant value of 1 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Snake_light_sig_0> (without init value) has a constant value of 1 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_31> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_30> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_29> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_28> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_27> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_26> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_25> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_24> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_23> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_22> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_21> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_20> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_19> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_18> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_17> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U6/Count1_16> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_31> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_30> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_29> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_28> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_27> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_26> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_25> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_24> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_23> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_22> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_21> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_20> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_19> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U3/Count1_18> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Count_31> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Count_30> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Count_29> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Count_28> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Count_27> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Count_26> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Count_25> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Count_24> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Snake_light_sig_2> (without init value) has a constant value of 1 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_95> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_89> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_83> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_77> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_71> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <U4/Body_y_0_65> (without init value) has a constant value of 0 in block <Greedy_snake>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <U7/start_top/vsync_de> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/vsync_de> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/hsync_r> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/hsync_r> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_is_8_0> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_is_8_0> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_num_0> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_num_0> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_is_8_1> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_is_8_1> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_num_1> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_num_1> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_is_8_2> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_is_8_2> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_num_2> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_num_2> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_num_0> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_num_0> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_rom_addra_0> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_rom_addra_0> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_num_1> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_num_1> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_rom_addra_1> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_rom_addra_1> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_num_2> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_num_2> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_rom_addra_2> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_rom_addra_2> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_rom_addra_3> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_rom_addra_3> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_rom_addra_4> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_rom_addra_4> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_rom_addra_5> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_rom_addra_5> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_rom_addra_6> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_rom_addra_6> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_rom_addra_7> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_rom_addra_7> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_rom_addra_8> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_rom_addra_8> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_rom_addra_9> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_rom_addra_9> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/x_cnt_10> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/x_cnt_10> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_rom_addra_10> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_rom_addra_10> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_is_8_0> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_is_8_0> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_is_8_1> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_is_8_1> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_is_8_2> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_is_8_2> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/y_cnt_0> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/y_cnt_0> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/y_cnt_1> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/y_cnt_1> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/y_cnt_2> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/y_cnt_2> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/y_cnt_3> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/y_cnt_3> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/y_cnt_4> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/y_cnt_4> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/y_cnt_5> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/y_cnt_5> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/y_cnt_6> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/y_cnt_6> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/y_cnt_7> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/y_cnt_7> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/vsync_r> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/vsync_r> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/x_cnt_0> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/x_cnt_0> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/y_cnt_8> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/y_cnt_8> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/y_cnt_9> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/y_cnt_9> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/x_cnt_1> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/x_cnt_1> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/x_cnt_2> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/x_cnt_2> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/x_cnt_3> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/x_cnt_3> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/x_cnt_4> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/x_cnt_4> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/x_cnt_5> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/x_cnt_5> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/x_cnt_6> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/x_cnt_6> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/x_cnt_7> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/x_cnt_7> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/x_cnt_8> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/x_cnt_8> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/x_cnt_9> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/x_cnt_9> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_rom_addra_0> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_rom_addra_0> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_rom_addra_1> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_rom_addra_1> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_rom_addra_2> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_rom_addra_2> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_rom_addra_3> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_rom_addra_3> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_rom_addra_4> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_rom_addra_4> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_rom_addra_5> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_rom_addra_5> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_rom_addra_6> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_rom_addra_6> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_rom_addra_7> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_rom_addra_7> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_rom_addra_8> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_rom_addra_8> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word1_rom_addra_9> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word1_rom_addra_9> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/hsync_de> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/hsync_de> 
+INFO:Xst:2261 - The FF/Latch <U7/start_top/word2_rom_addra_10> in Unit <Greedy_snake> is equivalent to the following FF/Latch, which will be removed : <U7/end_top/word2_rom_addra_10> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Greedy_snake, actual ratio is 14.
+FlipFlop U4/Body_x_0_2 has been replicated 1 time(s)
+FlipFlop U4/Body_x_0_4 has been replicated 1 time(s)
+FlipFlop U4/Body_y_0_0 has been replicated 2 time(s)
+FlipFlop U4/Body_y_0_2 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 457
+ Flip-Flops                                            : 457
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Greedy_snake.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1306
+#      GND                         : 3
+#      INV                         : 11
+#      LUT1                        : 98
+#      LUT2                        : 84
+#      LUT3                        : 115
+#      LUT4                        : 69
+#      LUT5                        : 116
+#      LUT6                        : 536
+#      MUXCY                       : 125
+#      MUXF7                       : 12
+#      MUXF8                       : 1
+#      VCC                         : 3
+#      XORCY                       : 133
+# FlipFlops/Latches                : 457
+#      FD                          : 11
+#      FDC                         : 103
+#      FDCE                        : 230
+#      FDE                         : 21
+#      FDP                         : 2
+#      FDPE                        : 25
+#      FDR                         : 26
+#      FDRE                        : 30
+#      FDS                         : 4
+#      FDSE                        : 5
+# RAMS                             : 2
+#      RAMB16BWER                  : 2
+# Clock Buffers                    : 3
+#      BUFG                        : 3
+# IO Buffers                       : 34
+#      IBUF                        : 5
+#      IBUFG                       : 1
+#      OBUF                        : 28
+# DCMs                             : 1
+#      DCM_SP                      : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             457  out of  18224     2%  
+ Number of Slice LUTs:                 1029  out of   9112    11%  
+    Number used as Logic:              1029  out of   9112    11%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1064
+   Number with an unused Flip Flop:     607  out of   1064    57%  
+   Number with an unused LUT:            35  out of   1064     3%  
+   Number of fully used LUT-FF pairs:   422  out of   1064    39%  
+   Number of unique control sets:        46
+
+IO Utilization: 
+ Number of IOs:                          34
+ Number of bonded IOBs:                  34  out of    232    14%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                2  out of     32     6%  
+    Number using Block RAM only:          2
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                                                    | Load  |
+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clk                                | DCM_SP:CLKFX                                                                                                                             | 61    |
+Clk                                | DCM_SP:CLK0                                                                                                                              | 353   |
+Clk                                | DCM_SP:CLKDV                                                                                                                             | 45    |
+U7/start_top/U1/N1                 | NONE(U7/start_top/U1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 1     |
+U7/end_top/U1/N1                   | NONE(U7/end_top/U1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)  | 1     |
+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 10.176ns (Maximum Frequency: 98.270MHz)
+   Minimum input arrival time before clock: 6.519ns
+   Maximum output required time after clock: 11.393ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk'
+  Clock period: 10.176ns (frequency: 98.270MHz)
+  Total number of paths / destination ports: 332891 / 785
+-------------------------------------------------------------------------
+Delay:               10.176ns (Levels of Logic = 8)
+  Source:            U4/Body_y_0_0_1 (FF)
+  Destination:       U4/Body_x_0_5 (FF)
+  Source Clock:      Clk rising
+  Destination Clock: Clk rising
+
+  Data Path: U4/Body_y_0_0_1 to U4/Body_x_0_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDPE:C->Q             6   0.525   0.984  U4/Body_y_0_0_1 (U4/Body_y_0_0_1)
+     LUT3:I1->O            1   0.250   0.682  U4/Body_y[0][5]_Body_y[0][5]_OR_74_o191111_SW0 (N107)
+     LUT6:I5->O            1   0.254   0.682  U4/Body_y[0][5]_Body_y[0][5]_OR_74_o191111 (U4/Body_y[0][5]_Body_y[0][5]_OR_74_o191111)
+     LUT6:I5->O            4   0.254   0.912  U4/Body_y[0][5]_Body_y[0][5]_OR_74_o191117 (U4/Body_y[0][5]_Body_y[0][5]_OR_74_o19111)
+     LUT6:I4->O            1   0.250   0.910  U4/Body_y[0][5]_Body_y[0][5]_OR_74_o12 (U4/Body_y[0][5]_Body_y[0][5]_OR_74_o12)
+     LUT6:I3->O            1   0.235   0.682  U4/Body_y[0][5]_Body_y[0][5]_OR_74_o13 (U4/Body_y[0][5]_Body_y[0][5]_OR_74_o13)
+     LUT5:I4->O           17   0.254   1.485  U4/Body_y[0][5]_Body_y[0][5]_OR_74_o18 (U4/Body_y[0][5]_Body_y[0][5]_OR_74_o18)
+     LUT6:I2->O           18   0.254   1.235  U4/Body_y[0][5]_Body_y[0][5]_OR_74_o37_8 (U4/Body_y[0][5]_Body_y[0][5]_OR_74_o377)
+     LUT6:I5->O            1   0.254   0.000  U4/Body_y_0_82_dpot (U4/Body_y_0_82_dpot)
+     FDCE:D                    0.074          U4/Body_y_0_82
+    ----------------------------------------
+    Total                     10.176ns (2.604ns logic, 7.572ns route)
+                                       (25.6% logic, 74.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
+  Total number of paths / destination ports: 461 / 458
+-------------------------------------------------------------------------
+Offset:              6.519ns (Levels of Logic = 5)
+  Source:            Rst_n (PAD)
+  Destination:       U5/Vga_rgb_0 (FF)
+  Destination Clock: Clk rising 0.5X
+
+  Data Path: Rst_n to U5/Vga_rgb_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            36   1.328   1.695  Rst_n_IBUF (Rst_n_IBUF)
+     LUT6:I4->O            2   0.250   0.726  U5/Reset_OR_DriverANDClockEnable24 (U5/Reset_OR_DriverANDClockEnable24)
+     LUT4:I3->O            2   0.254   0.726  U5/Reset_OR_DriverANDClockEnable25 (U5/Reset_OR_DriverANDClockEnable2)
+     LUT5:I4->O            1   0.254   0.958  U4/Mmux_Object243_SW2 (N210)
+     LUT6:I2->O            1   0.254   0.000  U5/Vga_rgb[2]_GND_12_o_mux_40_OUT<0>1 (U5/Vga_rgb[2]_GND_12_o_mux_40_OUT<0>1)
+     FDRE:D                    0.074          U5/Vga_rgb_0
+    ----------------------------------------
+    Total                      6.519ns (2.414ns logic, 4.105ns route)
+                                       (37.0% logic, 63.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
+  Total number of paths / destination ports: 978 / 28
+-------------------------------------------------------------------------
+Offset:              11.393ns (Levels of Logic = 6)
+  Source:            U7/start_top/y_cnt_3 (FF)
+  Destination:       VGA_red<4> (PAD)
+  Source Clock:      Clk rising 0.8X
+
+  Data Path: U7/start_top/y_cnt_3 to VGA_red<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            12   0.525   1.524  U7/start_top/y_cnt_3 (U7/start_top/y_cnt_3)
+     LUT6:I0->O            1   0.254   0.790  U7/end_top/y_cnt[9]_GND_18_o_LessThan_28_o11 (U7/end_top/y_cnt[9]_GND_18_o_LessThan_28_o1)
+     LUT5:I3->O            8   0.250   1.374  U7/end_top/y_cnt[9]_GND_18_o_LessThan_28_o12 (U7/end_top/y_cnt[9]_GND_18_o_LessThan_28_o)
+     LUT6:I1->O            5   0.254   1.271  U7/end_top/Mmux_end_Vga_red123 (U7/end_top/Mmux_end_Vga_red12)
+     LUT6:I1->O            1   0.254   0.910  U7/vga_select_module/VGA_red1 (U7/vga_select_module/VGA_red)
+     LUT5:I2->O            5   0.235   0.840  U7/vga_select_module/VGA_red3 (VGA_red_0_OBUF)
+     OBUF:I->O                 2.912          VGA_red_4_OBUF (VGA_red<4>)
+    ----------------------------------------
+    Total                     11.393ns (4.684ns logic, 6.709ns route)
+                                       (41.1% logic, 58.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |   10.176|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 64.00 secs
+Total CPU time to Xst completion: 63.79 secs
+ 
+--> 
+
+Total memory usage is 5322644 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  104 (   0 filtered)
+Number of infos    :   62 (   0 filtered)
+
